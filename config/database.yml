@@ -1,0 +1,21 @@
+defaults: &defaults
+  adapter: postgresql
+  database: <%= ENV['DATABASE_NAME'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  encoding: unicode
+  pool: 10
+  username: <%= ENV['DATABASE_USER'] %>
+  template: template1
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: 5432
+  sslmode: disable
+development:
+  <<: *defaults
+  database: <%= ENV['DATABASE_NAME'] %>_development
+test:
+  <<: *defaults
+  database: <%= ENV['DATABASE_NAME'] %>_test<%= ENV['TEST_ENV_NUMBER'] %>
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 10 %>
+  encoding: unicode
