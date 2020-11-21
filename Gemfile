@@ -26,6 +26,8 @@ gem 'redis-namespace', '~> 1.7.0'
 
 gem 'sidekiq', '~>6.0.2'
 
+gem 'aldous', '~> 1.1.3'
+
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -33,6 +35,8 @@ gem 'sidekiq', '~>6.0.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
   gem 'dotenv-rails', '~> 2.7.6'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
