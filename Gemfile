@@ -32,9 +32,14 @@ gem 'sidekiq', '~>6.0.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rubocop-rails', require: false
   gem 'dotenv-rails', '~> 2.7.6'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails', '~> 5.0.2'
+  gem 'ffaker', '~> 2.2.0'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'simplecov',  '~> 0.12.0'
 end
 
 group :development do
