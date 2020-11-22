@@ -23,3 +23,8 @@ Metrics/BlockLength:
 
 Style/Documentation:
   Enabled: false
+
+Rspec/EmptyExampleGroup:
+  Exclude:
+    - 'spec/requests/*.rb'
+    - 'spec/requests/**/*.rb'

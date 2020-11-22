@@ -1,0 +1,36 @@
+---
+openapi: 3.0.1
+info:
+  title: Notifyer API V1
+  version: v1
+  description: This is the first version of the Notifyer API
+paths:
+  "/api/v1/events":
+    post:
+      summary: Creates a Event
+      tags:
+      - Events
+      parameters: []
+      responses:
+        '201':
+          description: event created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                date:
+                  type: string
+                  format: date-time
+servers:
+- url: http://localhost:3000
+  variables:
+    defaultHost:
+      default: www.example.com
